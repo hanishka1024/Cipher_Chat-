@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cipher Chat App</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-[#121639] to-[#1F1D36] text-white flex flex-col items-center justify-center h-screen">
+
+    <div class="w-full max-w-2xl bg-white/10 backdrop-blur-md shadow-2xl rounded-xl overflow-hidden border border-white/15">
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-[#4A00E0] to-[#8E2DE2] text-white text-center py-5 text-2xl font-bold tracking-wider shadow-md">
+            Cipher Chat 💬
+        </div>
+
+        <!-- Chat Box -->
+        <div id="chat-box" class="p-5 h-80 overflow-y-auto space-y-3 bg-black/20 backdrop-blur-md rounded-b-lg">
+            <!-- Messages will be dynamically added here -->
+        </div>
+
+        <!-- Input Area -->
+        <div class="p-4 bg-black/30 backdrop-blur-lg flex items-center border-t border-white/15">
+            <input id="message-input" type="text" placeholder="Type your message..." class="flex-1 p-3 rounded-lg bg-[#2C2C54] text-white outline-none placeholder-gray-400 focus:ring-2 focus:ring-[#8E2DE2] transition-all duration-300">
+            <button id="send-button" class="ml-3 px-5 py-3 bg-[#4A00E0] hover:bg-[#8E2DE2] text-white font-semibold rounded-lg shadow-md hover:scale-105 transition-transform duration-200">
+                Send 🚀
+            </button>
+        </div>
+    </div>
+
+    <style>
+        /* Encrypted Messages - Soft Blue */
+        .encrypted {
+            background-color: rgba(65, 105, 225, 0.2); /* Royal Blue */
+            border-left: 5px solid #4169E1;
+            padding: 10px 14px;
+            border-radius: 6px;
+            color: #87CEFA; /* Light Blue */
+            font-weight: 600;
+            transition: transform 0.2s ease-in-out;
+        }
+        .encrypted:hover {
+            transform: scale(1.02);
+        }
+
+        /* Decrypted Messages - Lavender Glow */
+        .decrypted {
+            background-color: rgba(138, 43, 226, 0.2); /* BlueViolet */
+            border-left: 5px solid #8A2BE2;
+            padding: 10px 14px;
+            border-radius: 6px;
+            color: #E0BBE4; /* Soft Lavender */
+            font-weight: 600;
+            transition: transform 0.2s ease-in-out;
+        }
+        .decrypted:hover {
+            transform: scale(1.02);
+        }
+    </style>
+
+</body>
+</html>
